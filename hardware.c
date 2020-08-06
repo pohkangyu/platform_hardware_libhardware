@@ -97,11 +97,11 @@ static int load(const char *id,
          */
         handle = dlopen(path, RTLD_NOW);
     } else {
-#if defined(__ANDROID_RECOVERY__)
+//#if defined(__ANDROID_RECOVERY__)
         handle = dlopen(path, RTLD_NOW);
-#else
-        handle = android_load_sphal_library(path, RTLD_NOW);
-#endif
+//#else
+//        handle = android_load_sphal_library(path, RTLD_NOW);
+//#endif
     }
     if (handle == NULL) {
         char const *err_str = dlerror();
